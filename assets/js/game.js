@@ -40,6 +40,11 @@ var fightOrSkip = function() {
 var fight = function(enemy) {
   while (playerInfo.health > 0 && enemy.health > 0) {
 
+    var isPlayerTurn = true;
+      if (Math.random() > 0.5) {
+        isPlayerTurn = false;
+      }
+
     fightOrSkip (); //<-- Replace code with this function call
     var damage = randomNumber(playerInfo.attack - 3, playerInfo.attack);
     // ask player if they'd like to fight or run
